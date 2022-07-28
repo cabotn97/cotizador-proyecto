@@ -1,0 +1,132 @@
+/*-------------------------------
+		1.-ELEMENTS
+--------------------------------*/
+*{
+    font-family: $primary-font;
+    font-weight: $regular;
+}
+
+.bg-white{
+    background-color: #ffffff;
+}
+
+.white{
+    color: $white!important;
+}
+
+.btn{
+    padding: 10px 40px;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.d-none{
+    display: none!important;
+}
+.btn-blue-line{
+    background-color: $white;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    border-radius: 10px;
+    font-size: 10px;
+    padding: 3px 6px;
+    &:hover{
+        background-color: $primary-color;
+        color: $white;
+    }
+}
+.text-yellow{
+    color: $secondary-color;
+}
+.text-info{
+    color: $primary-color!important;
+}
+.relative{
+    position: relative;
+}
+.btn-default{
+    background-color: $tertiary-color!important;
+    color: $white;
+    border-radius:10px;
+    font-weight: $bold;
+    padding: 2px 8px;
+}
+.btn-primary{
+    background-color: $tertiary-color!important;
+    color: $white;
+    border-radius: 40px;
+    font-weight: $bold;
+    line-height: 1;
+    padding: 12px 60px!important;
+}
+.btn-yellow{
+    background-color: $secondary-color;
+    color: $tertiary-color;
+    font-weight: $bold;
+    border-radius: 30px;
+    padding: 6px 40px;
+    opacity: 0.9;
+}
+.btn-white{
+    background-color: $white;
+    color: $tertiary-color;
+    font-weight: $bold;
+    border-radius: 30px;
+    padding: 6px 40px;
+    opacity: 0.9;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+#action_exw{
+    cursor: pointer;
+}
+#action_suelta{
+    cursor: pointer;
+}
+#action_aereo{
+    cursor: pointer;
+}
+.imo{
+    margin-left: 25px;
+}
+@media(min-width: 1200px) {
+    .hidden-lg {
+        display: none;
+    }
+}
+
+@media(max-width: 1160px) {
+    .hidden-md {
+        display: none;
+    }
+}
+
+@media(max-width: $tablet) {
+    .hidden-sm {
+        display: none;
+    }
+}
+
+@media(max-width: $mobile) {
+    .hidden-xs {
+        display: none;
+    }
+}

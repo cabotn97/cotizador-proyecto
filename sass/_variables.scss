@@ -1,0 +1,51 @@
+/*-------------------------------
+		0.1.-VARIABLES
+--------------------------------*/
+
+
+/*----------- Fonts -------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+$primary-font: 'Ubuntu', sans-serif;
+
+$light :300;
+
+$regular:400;
+
+$bold: 700;
+
+/*----------- Main Colors -------------*/
+
+$primary-color: #80CEF3;
+
+$secondary-color: #FFE171;
+
+$tertiary-color: #095FA9;
+
+$fourth-color: #FF2F2F;
+
+$transparent-white: rgba(255,255,255,0.3);
+
+$transparent-background: rgba(255,255,255,0.8);
+
+$white:#ffffff;
+
+$black:#000000;
+
+$grey: #707070;
+
+$light-grey: #f2f2f2;
+
+
+$shadow: 4px 3px 6px 0px rgba(0,0,0,0.22);
+
+/*------------ Container ----------*/
+
+$max-width: 1200px;
+
+/*-------- Responsive Breakpoints ---------*/
+
+$tablet: 1025px;
+
+$mobile: 768px;

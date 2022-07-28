@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>NTL Cargo</title>
+<meta name="description" content="NTL Cargo - Página oficial de New Time Logistics - C.A.B.A -  República Argentina">
+<link rel="stylesheet" href="css/main.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<script type="text/javascript" src="js/scripts.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+    <body>
+        <header class="login-true">
+            <nav class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo-white.svg" alt=""></a>
+                </div>
+                <div class="menu">                
+                <div>
+                    <a href="#" class="hidden-xs white">¿Quienes Somos?</a>
+                    <a href="#" class="hidden-xs white">FAQS</a>
+                </div>
+                <div>
+                    <a href="#" class="btn-profile" title="Mi Perfil"><i class="fas fa-user"></i> Victoria, Falabella</a>
+                    <a href="#" class="btn-logout" title="Salir"><i class="fas fa-sign-out-alt"></i></a>
+                </div>  
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="step-bar">
+                <a href="search.html" class="btn-step active">Búsqueda</a>
+                <div>
+                    <img src="img/arrow_right_light.svg" alt="">
+                </div>
+                <a href="selection.html" class="btn-step">Selección</a>
+                <div>
+                    <img src="img/arrow_right_light.svg" alt="">
+                </div>
+                <a href="additional.html" class="btn-step">Adicionales</a>
+                <div>
+                    <img src="img/arrow_right_light.svg" alt="">
+                </div>
+                <a href="reservation.html" class="btn-step">Reservar</a>
+            </div>
+        </div>
+        <section id="type">
+            <div class="header">
+                <h2>Seleccioná tu tipo de carga</h2>
+            </div>
+            <div class="container tab">
+                <button class="tablinks active" onclick="openType(event, 'Container')">
+                    <div>
+                        <img src="img/contenedor_generico.svg" width="100px">
+                    </div>
+                    Container
+                </button>
+                <button class="tablinks" onclick="openType(event, 'Carga-Suelta')">
+                    <div>
+                        <img src="img/carga_suelta.svg" width="100px">
+                    </div>
+                    Carga Suelta
+                </button>
+                <button class="tablinks" onclick="openType(event, 'Aereo')">
+                    <div>
+                        <img src="img/aereo.svg" width="110px">
+                    </div>
+                    Aéreo
+                </button>
+            </div>
+            <div class="container-fluid body">
+                <div id="Container" class="container tabcontent active">
+                    <form action="" class="form-containers">
+                        <div class="row">
+                            <input type="hidden" name="type" value="container">
+                            <div class="form-group">
+                                <label for="">Origen</label>
+                                <input type="text" name="source">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Destino</label>
+                                <input type="text" name="target">
+                            </div>
+                            <div class="form-submit">
+                                <input type="submit"  value="Buscar">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-img">
+                                <img src="img/contenedor_generico.svg" width="70px">
+                            </div>
+                            <div class="form-group relative">
+                                <label for="">Composición de carga</label>
+                                <input type="text" name="composition" onclick="openCarga()">
+                                <div class="carga-control" id="carga_container">
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_20.svg" alt=""> 
+                                        <p>20</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-20" step="1" value="0">
+                                        </div>
+                                        <i class="fas fa-check text-info"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_40.svg" alt=""> 
+                                        <p>40</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-40" step="1" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_40hq.svg" alt=""> 
+                                        <p>40HQ</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-40hq" step="1" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <select name="other" id="">
+                                            <option value="Otros">Otros</option>
+                                            <option value="Otros-2">Otros 2</option>
+                                            <option value="Otros-3">Otros 3</option>
+                                        </select>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-other" step="1" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-checkbox">
+                                <label for="">FOB</label>
+                                <div class="incluir">
+                                    <input type="checkbox" name="fob" id="fob_container">
+                                    <label for=""></label>
+                                </div>
+                                <div class="popup" id="popup_container">
+                                    <p>Copie y pegue su dirección aquí:</p>
+                                    <textarea name="code" id="popuptxt" cols="30" rows="10"></textarea>
+                                    <p class="text-danger">* La cotización de este servicio puede demorar 48hs.</p>
+                                </div>
+                                <label id="action_exw">EXW</label>
+                                <span><img src="img/icono-pregunta.svg" width="20px"></span>
+                                <label class="imo">IMO</label>
+                                <label class="chexbox">
+                                    <input type="checkbox" name="imo" id="imo">
+                                    <span class="chexmark"></span>
+                                </label>
+                                <span><img src="img/icono-pregunta.svg" width="20px"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>    
+                <div id="Carga-Suelta" class="container tabcontent">
+                    <form action="" class="form-carga-suelta">
+                        <div class="row">
+                            <input type="hidden" name="type" value="carga suelta">
+                            <div class="form-group">
+                                <label for="">Origen</label>
+                                <input type="text" name="source">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Destino</label>
+                                <input type="text" name="target">
+                            </div>
+                            <div class="form-submit">
+                                <input type="submit"  value="Buscar">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-img">
+                                <img src="img/carga_suelta.svg" width="70px">
+                            </div>
+                            <div class="form-group relative">
+                                <label for="">Composición de carga</label>
+                                <input type="text" name="composition"  onclick="openSuelta()">
+                                <div class="carga-control" id="carga_suelta">
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_20.svg" alt=""> 
+                                        <p>20</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-20" value="0">
+                                        </div>
+                                        <i class="fas fa-check text-info"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_40.svg" alt=""> 
+                                        <p>40</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-40" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_40hq.svg" alt=""> 
+                                        <p>40HQ</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-40hq" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <select name="other" id="">
+                                            <option value="Otros">Otros</option>
+                                            <option value="Otros-2">Otros 2</option>
+                                            <option value="Otros-3">Otros 3</option>
+                                        </select>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-other" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-checkbox">
+                                <label for="">FOB</label>
+                                <div class="incluir">
+                                    <input type="checkbox" name="fob" id="fob_suelta" >
+                                    <label for=""></label>
+                                </div>
+                                <div class="popup" id="popup_suelta">
+                                    <p>Copie y pegue su dirección aquí:</p>
+                                    <textarea name="code" cols="30" rows="10"  id="popupsueltatxt"></textarea>
+                                    <p class="text-danger">* La cotización de este servicio puede demorar 48hs.</p>
+                                </div>
+                                <label id="action_suelta">EXW</label>
+                                <span><img src="img/icono-pregunta.svg" width="20px"></span>
+                                <label class="imo">IMO</label>
+                                <label class="chexbox">
+                                    <input type="checkbox" name="imo" id="imo">
+                                    <span class="chexmark"></span>
+                                </label>
+                                <span><img src="img/icono-pregunta.svg" width="20px"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>    
+                <div id="Aereo" class="container tabcontent">
+                    <form action="" class="form-aereo">
+                        <div class="row">
+                            <input type="hidden" name="type" value="aereo">
+                            <div class="form-group">
+                                <label for="">Origen</label>
+                                <input type="text" name="source">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Destino</label>
+                                <input type="text" name="target">
+                            </div>
+                            <div class="form-submit">
+                                <input type="submit"  value="Buscar">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-img">
+                                <img src="img/aereo.svg" width="70px">
+                            </div>
+                            <div class="form-group relative">
+                                <label for="">Composición de carga</label>
+                                <input type="text" name="composition" onclick="openAereo()">
+                                <div class="carga-control" id="carga_aereo">
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_20.svg" alt=""> 
+                                        <p>20</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-20" value="0">
+                                        </div>
+                                        <i class="fas fa-check text-info"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_40.svg" alt=""> 
+                                        <p>40</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-40" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <img src="img/contenedor_40hq.svg" alt=""> 
+                                        <p>40HQ</p>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-40hq" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                    <div class="control-cant">
+                                        <select name="other" id="">
+                                            <option value="Otros">Otros</option>
+                                            <option value="Otros-2">Otros 2</option>
+                                            <option value="Otros-3">Otros 3</option>
+                                        </select>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="20" name="cont-other" value="0">
+                                        </div>
+                                        <i class="fas fa-check white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-checkbox">
+                                <label for="">FOB</label>
+                                <div class="incluir">
+                                    <input type="checkbox" name="fob" id="fob_aereo">
+                                    <label for=""></label>
+                                </div>
+                                <div class="popup" id="container_aereo">
+                                    <p>Copie y pegue su dirección aquí:</p>
+                                    <textarea name="code" cols="30" rows="10" id="popupaereo"></textarea>
+                                    <p class="text-danger">* La cotización de este servicio puede demorar 48hs.</p>
+                                </div>
+                                <label id="action_aereo">EXW</label>
+                                <span><img src="img/icono-pregunta.svg" width="20px"></span>
+                                <label class="imo">IMO</label>
+                                <label class="chexbox">
+                                    <input type="checkbox" name="imo" id="imo">
+                                    <span class="chexmark"></span>
+                                </label>
+                                <span><img src="img/icono-pregunta.svg" width="20px"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="why" class="container">
+            <div class="header">
+                <h2>RAZONES PARA ELEGIRNOS</h2>
+            </div>
+            <div class="body">
+                <div class="box">
+                    <img src="img/icono-tarifas-online.svg" alt="">
+                    <h3>Tarifa on-line</h3>
+                    <p>Ingrese los datos básicos de su embarque y en segundos obtenga su tarifa.</p>
+                </div>
+                <div class="box">
+                    <img src="img/icono-seguimiento-personalizado.svg" alt="">
+                    <h3>Seguimiento Personalizado</h3>
+                    <p>Se asigna un Customer Service que complementa la gestión.</p>
+                </div>
+                <div class="box">
+                    <img src="img/contenedor_generico.svg" alt="">
+                    <h3>Consolidado Directo</h3>
+                    <p>Ofrecemos el consolidado directo de cargas desde los principales puertos...</p>
+                </div>
+                <div class="box">
+                    <img src="img/icono-contratos-exclusivos.svg" alt="">
+                    <h3>Contratos Exclusivos</h3>
+                    <p>Tenemos contratos con todas las líneas marítimas para garantizar las mejores...</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo-footer.svg" alt="">
+                    <p>Página oficial de New Time Logistics <br> C.A.B.A -  República Argentina</p>
+                </div>
+                <div class="footer-form">
+                    <div class="header">
+                        <h3>Contactanos</h3>
+                        <p>Escribenos un mensaje o consulta completando <br> este formulario. Nos encantaría ayudarte.</p>
+                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <div>
+                                <label for="">Nombre</label>
+                                <input type="text" name="first_name">
+                            </div>
+                            <div>
+                                <label for="">Apellido</label>
+                                <input type="text" name="last_name">
+                            </div>
+                        </div>
+                        <div class="form-email">
+                            <label for="">Email</label>
+                            <input type="email" name="email">
+                        </div>
+                        <div class="form-textarea">
+                            <label for="">Mensaje</label>
+                            <textarea name="mesagge"></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" class="btn btn-purple" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script tyle="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Containers
+                $("#action_exw")
+                    .click(function(){
+                        $('#popup_container').toggle();
+                        $('#popuptxt').focus();
+                    });
+                $('#popup_container')
+                    .focusout(function() {
+                        $('#popup_container').css({'display':'none'});
+                    })
+                    .blur(function() {
+                        $('#popup_container').css({'display':'none'});
+                    });
+                //Carga Suelta
+                $("#action_suelta")
+                    .click(function(){
+                        $('#popup_suelta').toggle();
+                        $('#popupsueltatxt').focus();
+                    });
+                $('#popup_suelta')
+                    .focusout(function() {
+                        $('#popup_suelta').css({'display':'none'});
+                    })
+                    .blur(function() {
+                        $('#popup_suelta').css({'display':'none'});
+                    });
+                //Aereo
+                $("#action_aereo")
+                    .click(function(){
+                        $('#container_aereo').toggle();
+                        $('#popupaereo').focus();
+                    });
+                $('#container_aereo')
+                    .focusout(function() {
+                        $('#container_aereo').css({'display':'none'});
+                    })
+                    .blur(function() {
+                        $('#container_aereo').css({'display':'none'});
+                    });
+            });          
+        </script>
+    </body>
+</html>
